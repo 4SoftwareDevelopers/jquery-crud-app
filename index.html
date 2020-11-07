@@ -9,11 +9,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
     <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css'>
     <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css'>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css'>
 </head>
 
 <body>
     <div class="container" style="margin-top: 20px;">
         <h1>CRUD Personas</h1>
+        <div class="alert alert-primary" id="msg" style="display: none;" role="alert"></div>
         <table id="personas" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
@@ -34,10 +36,51 @@
                 </tr>
             </tfoot>
         </table>
+
+        <div class="modal fade" id="personaModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalTitle">Persona</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="nombre">Nombre</label>
+                          <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                          <input type="hidden" class="form-control" id="id">
+                        </div>
+                        <div class="form-group">
+                          <label for="apellido">Apellido</label>
+                          <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="Ingrese su teléfono">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" id="save" class="btn btn-primary">Guardar</button>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src='index.js'></script>
 
 </body>
